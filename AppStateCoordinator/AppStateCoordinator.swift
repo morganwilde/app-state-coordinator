@@ -9,10 +9,15 @@
 import Foundation
 import UIKit
 
+/// `AppStateCoordinator` takes a sequence of states and once the app is ready,
+/// it goes in and out of each state until it reaches the final one.
 public class AppStateCoordinator: NSObject {
   
+  /// The only way to get access to the instance of `AppStateCoordinator`.
   public static let shared = AppStateCoordinator()
   
+  /// In the `AppDelegate` assign to the `states` property the specific sequence
+  /// of states. Order is important.
   public var states = [AppState]() {
     didSet {
       currentStateIndex = 0
