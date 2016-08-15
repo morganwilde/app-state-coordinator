@@ -11,9 +11,9 @@ import UIKit
 
 public class AppStateCoordinator: NSObject {
   
-  static let shared = AppStateCoordinator()
+  public static let shared = AppStateCoordinator()
   
-  var states = [AppState]() {
+  public var states = [AppState]() {
     didSet {
       currentStateIndex = 0
       setupRootViewController()

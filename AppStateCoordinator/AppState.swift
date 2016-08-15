@@ -18,35 +18,35 @@ public class AppState {
   private var stepNumber = 0
   private var finalStepNumber: Int?
   
-  var viewController: AppStateViewController? {
+  public var viewController: AppStateViewController? {
     didSet {
       viewController?.appState = self
     }
   }
   
-  func setup() {
+  public func setup() {
     
   }
-  init(finalStepNumber: Int = 1) {
+  public init(finalStepNumber: Int = 1) {
     self.finalStepNumber = finalStepNumber
     setup()
   }
-  init(finalSteps: [String]) {
+  public init(finalSteps: [String]) {
     self.finalSteps = finalSteps
     setup()
   }
-  init(finalStep: String) {
+  public init(finalStep: String) {
     finalSteps = [finalStep]
     setup()
   }
   
-  func transitionIn() -> UIViewController? {
+  public func transitionIn() -> UIViewController? {
     return viewController as? UIViewController
   }
   private func transitionOut() {
     AppStateCoordinator.shared.go()
   }
-  func step(name: String? = nil) {
+  public func step(name: String? = nil) {
     dispatch_async(dispatch_get_main_queue()) {
       // Increment step
       if let name = name {
@@ -78,7 +78,7 @@ public class AppState {
   }
   private func didStep(stepName: String?) {}
   
-  func instantiate(viewController viewControllerIdentifier: String, fromStoryboard storyboardName: String) -> UIViewController {
+  public func instantiate(viewController viewControllerIdentifier: String, fromStoryboard storyboardName: String) -> UIViewController {
     let storyboard = UIStoryboard(name: storyboardName, bundle: NSBundle.mainBundle())
     return storyboard.instantiateViewControllerWithIdentifier(viewControllerIdentifier)
   }
