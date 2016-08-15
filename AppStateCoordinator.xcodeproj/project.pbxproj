@@ -10,9 +10,9 @@
 		2EB3235A1D619EBA0099FE11 /* AppStateCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EB323591D619EBA0099FE11 /* AppStateCoordinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2EB323611D619EBA0099FE11 /* AppStateCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB323561D619EBA0099FE11 /* AppStateCoordinator.framework */; };
 		2EB323661D619EBA0099FE11 /* AppStateCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB323651D619EBA0099FE11 /* AppStateCoordinatorTests.swift */; };
-		2EB323731D619F0C0099FE11 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB323701D619F0C0099FE11 /* AppState.swift */; };
-		2EB323741D619F0C0099FE11 /* AppStateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB323711D619F0C0099FE11 /* AppStateCoordinator.swift */; };
-		2EB323751D619F0C0099FE11 /* AppStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB323721D619F0C0099FE11 /* AppStateViewController.swift */; };
+		2EB3237A1D61A7C60099FE11 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB323771D61A7C60099FE11 /* AppState.swift */; };
+		2EB3237B1D61A7C60099FE11 /* AppStateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB323781D61A7C60099FE11 /* AppStateCoordinator.swift */; };
+		2EB3237C1D61A7C60099FE11 /* AppStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB323791D61A7C60099FE11 /* AppStateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,9 +32,9 @@
 		2EB323601D619EBA0099FE11 /* AppStateCoordinatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppStateCoordinatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EB323651D619EBA0099FE11 /* AppStateCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateCoordinatorTests.swift; sourceTree = "<group>"; };
 		2EB323671D619EBA0099FE11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2EB323701D619F0C0099FE11 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppState.swift; path = Classes/AppState.swift; sourceTree = "<group>"; };
-		2EB323711D619F0C0099FE11 /* AppStateCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppStateCoordinator.swift; path = Classes/AppStateCoordinator.swift; sourceTree = "<group>"; };
-		2EB323721D619F0C0099FE11 /* AppStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppStateViewController.swift; path = Classes/AppStateViewController.swift; sourceTree = "<group>"; };
+		2EB323771D61A7C60099FE11 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		2EB323781D61A7C60099FE11 /* AppStateCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStateCoordinator.swift; sourceTree = "<group>"; };
+		2EB323791D61A7C60099FE11 /* AppStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,9 @@
 		2EB323581D619EBA0099FE11 /* AppStateCoordinator */ = {
 			isa = PBXGroup;
 			children = (
-				2EB323761D61A5950099FE11 /* Classes */,
+				2EB323771D61A7C60099FE11 /* AppState.swift */,
+				2EB323781D61A7C60099FE11 /* AppStateCoordinator.swift */,
+				2EB323791D61A7C60099FE11 /* AppStateViewController.swift */,
 				2EB323591D619EBA0099FE11 /* AppStateCoordinator.h */,
 				2EB3235B1D619EBA0099FE11 /* Info.plist */,
 			);
@@ -91,16 +93,6 @@
 				2EB323671D619EBA0099FE11 /* Info.plist */,
 			);
 			path = AppStateCoordinatorTests;
-			sourceTree = "<group>";
-		};
-		2EB323761D61A5950099FE11 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				2EB323701D619F0C0099FE11 /* AppState.swift */,
-				2EB323711D619F0C0099FE11 /* AppStateCoordinator.swift */,
-				2EB323721D619F0C0099FE11 /* AppStateViewController.swift */,
-			);
-			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,9 +203,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EB323741D619F0C0099FE11 /* AppStateCoordinator.swift in Sources */,
-				2EB323731D619F0C0099FE11 /* AppState.swift in Sources */,
-				2EB323751D619F0C0099FE11 /* AppStateViewController.swift in Sources */,
+				2EB3237B1D61A7C60099FE11 /* AppStateCoordinator.swift in Sources */,
+				2EB3237A1D61A7C60099FE11 /* AppState.swift in Sources */,
+				2EB3237C1D61A7C60099FE11 /* AppStateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
