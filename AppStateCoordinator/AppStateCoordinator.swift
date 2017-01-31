@@ -11,22 +11,22 @@ import UIKit
 
 /// `AppStateCoordinator` takes a sequence of states and once the app is ready,
 /// it goes in and out of each state until it reaches the final one.
-public class AppStateCoordinator: NSObject {
+open class AppStateCoordinator: NSObject {
   
   /// The only way to get access to the instance of `AppStateCoordinator`.
-  public static let shared = AppStateCoordinator()
+  open static let shared = AppStateCoordinator()
   
   /// In the `AppDelegate` assign to the `states` property the specific sequence
   /// of states. Order is important.
-  public var states = [AppState]() {
+  open var states = [AppState]() {
     didSet {
       currentStateIndex = 0
       setupRootViewController()
     }
   }
-  private var currentStateIndex = -1
-  private var rootViewController: UIViewController? {
-    return UIApplication.sharedApplication().delegate?.window??.rootViewController
+  fileprivate var currentStateIndex = -1
+  fileprivate var rootViewController: UIViewController? {
+    return UIApplication.shared.delegate?.window??.rootViewController
   }
   
   func go() {
@@ -38,19 +38,19 @@ public class AppStateCoordinator: NSObject {
         } else {
           if currentStateIndex > 0 {
             let previousViewController = states[currentStateIndex - 1].viewController as? UIViewController
-            previousViewController?.presentViewController(viewController, animated: true, completion: nil)
+            previousViewController?.present(viewController, animated: true, completion: nil)
           } else {
-            rootViewController?.presentViewController(viewController, animated: true, completion: nil)
+            rootViewController?.present(viewController, animated: true, completion: nil)
           }
         }
       }
     }
   }
-  private func setupRootViewController() {
+  fileprivate func setupRootViewController() {
     guard
-      let appDelegate = UIApplication.sharedApplication().delegate,
+      let appDelegate = UIApplication.shared.delegate,
       let rootViewController = rootViewController,
-      let firstViewController = states[0].viewController as? UIViewController where states.count > 0
+      let firstViewController = states[0].viewController as? UIViewController, states.count > 0
     else {
       return
     }

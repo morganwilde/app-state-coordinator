@@ -11,18 +11,18 @@ import UIKit
 
 /// When defining a specific state within the app you need to define a subclass
 /// of `AppState`.
-public class AppState {
+open class AppState {
   
   // If state tracking is done with actual step names
-  private var steps = [String]()
-  private var finalSteps: [String]?
+  fileprivate var steps = [String]()
+  fileprivate var finalSteps: [String]?
   // If state tracking is done with a step counter
-  private var stepNumber = 0
-  private var finalStepNumber: Int?
+  fileprivate var stepNumber = 0
+  fileprivate var finalStepNumber: Int?
   
   /// `viewController` holds a reference to the underlying view controller that
   /// is the basis for this instance of `AppState`.
-  public var viewController: AppStateViewController? {
+  open var viewController: AppStateViewController? {
     didSet {
       viewController?.appState = self
     }
@@ -38,7 +38,7 @@ public class AppState {
   ///                                fromStoryboard: "Main") as? FirstViewController
   /// }
   /// ```
-  public func setup() {
+  open func setup() {
     
   }
   
@@ -67,11 +67,11 @@ public class AppState {
   
   /// Do any additional setup right before the `AppStateCoordinator` transitions
   /// into this state.
-  public func transitionIn() -> UIViewController? {
+  open func transitionIn() -> UIViewController? {
     return viewController as? UIViewController
   }
   
-  private func transitionOut() {
+  fileprivate func transitionOut() {
     AppStateCoordinator.shared.go()
   }
   
@@ -89,8 +89,8 @@ public class AppState {
   ///
   /// - Parameter name: The name of the step you want tracked, defaults to `nil`
   /// if you don't need to have a named step.
-  public func step(name: String? = nil) {
-    dispatch_async(dispatch_get_main_queue()) {
+  open func step(_ name: String? = nil) {
+    DispatchQueue.main.async {
       // Increment step
       if let name = name {
         self.steps.append(name)
@@ -101,7 +101,7 @@ public class AppState {
       if let finalSteps = self.finalSteps {
         var proceed = true
         for finalStep in finalSteps {
-          if !self.steps.contains({$0 == finalStep}) {
+          if !self.steps.contains(where: {$0 == finalStep}) {
             proceed = false
           }
         }
@@ -120,7 +120,7 @@ public class AppState {
     }
   }
   
-  private func didStep(stepName: String?) {}
+  fileprivate func didStep(_ stepName: String?) {}
   
   /// A helper method that loads a `UIStoryboard` and `UIViewController` in a
   /// single call.
@@ -128,8 +128,8 @@ public class AppState {
   /// view controller.
   /// - Parameter fromStoryboard: The name of the storyboard where the search
   /// will be conducted.
-  public func instantiate(viewController viewControllerIdentifier: String, fromStoryboard storyboardName: String) -> UIViewController {
-    let storyboard = UIStoryboard(name: storyboardName, bundle: NSBundle.mainBundle())
-    return storyboard.instantiateViewControllerWithIdentifier(viewControllerIdentifier)
+  open func instantiate(viewController viewControllerIdentifier: String, fromStoryboard storyboardName: String) -> UIViewController {
+    let storyboard = UIStoryboard(name: storyboardName, bundle: Bundle.main)
+    return storyboard.instantiateViewController(withIdentifier: viewControllerIdentifier)
   }
 }
