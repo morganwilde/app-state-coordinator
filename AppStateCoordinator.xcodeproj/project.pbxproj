@@ -13,6 +13,7 @@
 		2EB3237A1D61A7C60099FE11 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB323771D61A7C60099FE11 /* AppState.swift */; };
 		2EB3237B1D61A7C60099FE11 /* AppStateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB323781D61A7C60099FE11 /* AppStateCoordinator.swift */; };
 		2EB3237C1D61A7C60099FE11 /* AppStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB323791D61A7C60099FE11 /* AppStateViewController.swift */; };
+		2EE919E91E4104090097AFBB /* ViewControllerStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE919E81E4104090097AFBB /* ViewControllerStep.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		2EB323771D61A7C60099FE11 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		2EB323781D61A7C60099FE11 /* AppStateCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStateCoordinator.swift; sourceTree = "<group>"; };
 		2EB323791D61A7C60099FE11 /* AppStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStateViewController.swift; sourceTree = "<group>"; };
+		2EE919E81E4104090097AFBB /* ViewControllerStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerStep.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				2EB323771D61A7C60099FE11 /* AppState.swift */,
 				2EB323781D61A7C60099FE11 /* AppStateCoordinator.swift */,
 				2EB323791D61A7C60099FE11 /* AppStateViewController.swift */,
+				2EE919E81E4104090097AFBB /* ViewControllerStep.swift */,
 				2EB323591D619EBA0099FE11 /* AppStateCoordinator.h */,
 				2EB3235B1D619EBA0099FE11 /* Info.plist */,
 			);
@@ -205,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EE919E91E4104090097AFBB /* ViewControllerStep.swift in Sources */,
 				2EB3237B1D61A7C60099FE11 /* AppStateCoordinator.swift in Sources */,
 				2EB3237A1D61A7C60099FE11 /* AppState.swift in Sources */,
 				2EB3237C1D61A7C60099FE11 /* AppStateViewController.swift in Sources */,

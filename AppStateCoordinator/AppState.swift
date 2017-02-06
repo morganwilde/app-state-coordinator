@@ -65,6 +65,10 @@ open class AppState {
     setup()
   }
   
+  public convenience init(finalStep: ViewControllerStep) {
+    self.init(finalStep: finalStep.rawValue)
+  }
+  
   /// Do any additional setup right before the `AppStateCoordinator` transitions
   /// into this state.
   open func transitionIn() -> UIViewController? {
@@ -89,14 +93,14 @@ open class AppState {
   ///
   /// - Parameter name: The name of the step you want tracked, defaults to `nil`
   /// if you don't need to have a named step.
-  open func step(_ name: String? = nil) {
+  public func step(_ name: String? = nil) {
     DispatchQueue.main.async {
       // Increment step
       if let name = name {
         self.steps.append(name)
       }
       self.stepNumber += 1
-      
+
       // Check for final conditions
       if let finalSteps = self.finalSteps {
         var proceed = true
@@ -119,6 +123,10 @@ open class AppState {
       self.didStep(name)
     }
   }
+  public func step(_ viewControllerStep: ViewControllerStep) {
+    step(viewControllerStep.rawValue)
+  }
+  
   
   fileprivate func didStep(_ stepName: String?) {}
   
